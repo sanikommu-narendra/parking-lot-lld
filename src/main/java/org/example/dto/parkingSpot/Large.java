@@ -1,7 +1,12 @@
 package org.example.dto.parkingSpot;
 
 public class Large extends ParkingSpot {
-    public Large(int floorNum, int amount) {
-        super(floorNum, amount);
+    public Large(Integer floorNum) {
+        super(floorNum, 40);
+    }
+
+    @Override
+    public int cost(int parkingHours) {
+        return parkingHours * amount;
     }
 }

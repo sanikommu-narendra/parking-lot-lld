@@ -6,7 +6,7 @@ public abstract class ParkingSpot {
     private static final AtomicInteger x = new AtomicInteger(0);
     private int id;
     private int floorNum;
-    private int amount;
+    protected int amount;
     private boolean isFree;
 
     public int getId() {
@@ -41,10 +41,13 @@ public abstract class ParkingSpot {
         isFree = free;
     }
 
+    public ParkingSpot() {}
     public ParkingSpot(int floorNum, int amount) {
         this.floorNum = floorNum;
         this.amount = amount;
         this.id = x.incrementAndGet();
         this.isFree = true;
     }
+
+    public abstract int cost(int parkingHours);
 }

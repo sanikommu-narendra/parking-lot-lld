@@ -11,6 +11,9 @@ public class DisplayBoard {
 
     private DisplayBoard() {
         this.freeSpots = new HashMap<>();
+        freeSpots.put(ParkingSpotEnum.MINI, 0);
+        freeSpots.put(ParkingSpotEnum.COMPACT, 0);
+        freeSpots.put(ParkingSpotEnum.LARGE, 0);
     }
 
     public static DisplayBoard getInstance() {

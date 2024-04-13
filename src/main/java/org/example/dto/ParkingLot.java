@@ -81,8 +81,17 @@ public class ParkingLot {
         displayBoard = DisplayBoard.getInstance();
         freeParkingSpots = new HashMap<>();
         occupiedParkingSpots = new HashMap<>();
+        initiateFreeAndOccupiedParkingSpots();
     }
 
+    void initiateFreeAndOccupiedParkingSpots() {
+        freeParkingSpots.put(ParkingSpotEnum.MINI, new ArrayList<>());
+        freeParkingSpots.put(ParkingSpotEnum.COMPACT, new ArrayList<>());
+        freeParkingSpots.put(ParkingSpotEnum.LARGE, new ArrayList<>());
+        occupiedParkingSpots.put(ParkingSpotEnum.MINI, new ArrayList<>());
+        occupiedParkingSpots.put(ParkingSpotEnum.COMPACT, new ArrayList<>());
+        occupiedParkingSpots.put(ParkingSpotEnum.LARGE, new ArrayList<>());
+    }
     public static ParkingLot getInstance() {
         if (parkingLot == null) {
             parkingLot = new ParkingLot("Parking Lot");

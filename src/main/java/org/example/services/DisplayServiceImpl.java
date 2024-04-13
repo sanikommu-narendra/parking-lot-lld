@@ -8,12 +8,12 @@ import org.example.interfaces.DisplayService;
 import org.example.interfaces.Observer;
 
 public class DisplayServiceImpl implements DisplayService, Observer {
-//    @Override
-//    public void update(ParkingSpotEnum parkingSpotEnum, int change) {
-//        int currentCount = DisplayBoard.getInstance().getFreeSpots().get(parkingSpotEnum);
-//        int newCount = currentCount + 1;
-//        DisplayBoard.getInstance().getFreeSpots().replace(parkingSpotEnum, newCount);
-//    }
+    @Override
+    public void update(ParkingSpotEnum parkingSpotEnum, int change) {
+        int currentCount = DisplayBoard.getInstance().getFreeSpots().get(parkingSpotEnum);
+        int newCount = currentCount + 1;
+        DisplayBoard.getInstance().getFreeSpots().replace(parkingSpotEnum, newCount);
+    }
 
     @Override
     public void update(ParkingEvent parkingEvent) {

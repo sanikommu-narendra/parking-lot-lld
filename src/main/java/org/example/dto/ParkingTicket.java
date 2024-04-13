@@ -3,6 +3,7 @@ package org.example.dto;
 import org.example.dto.parkingSpot.ParkingSpot;
 import org.example.dto.vechicles.Vehicle;
 
+import java.time.Duration;
 import java.time.LocalDateTime;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -54,6 +55,9 @@ public class ParkingTicket  {
         this.timeStamp = LocalDateTime.now();
     }
 
-
+    public int getParkingHours() {
+        // return (int) Duration.between(LocalDateTime.now(), timeStamp).toHours();
+        return 2;
+    }
 
 }

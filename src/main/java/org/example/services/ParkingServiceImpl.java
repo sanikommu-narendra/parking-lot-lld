@@ -4,6 +4,7 @@ import org.example.dto.ParkingLot;
 import org.example.dto.ParkingTicket;
 import org.example.dto.parkingSpot.ParkingEvent;
 import org.example.dto.parkingSpot.ParkingSpot;
+import org.example.dto.parkingSpot.sportDecorator.CarWash;
 import org.example.dto.vechicles.Vehicle;
 import org.example.enums.ParkingEventType;
 import org.example.enums.ParkingSpotEnum;
@@ -89,5 +90,10 @@ public class ParkingServiceImpl implements ParkingService {
     void notifyAllObservers(ParkingEvent parkingEvent) {
         for(Observer observer: observers)
             observer.update(parkingEvent);
+    }
+
+    public void addWash(ParkingTicket parkingTicket) {
+        parkingTicket.setParkingSpot(new CarWash(parkingTicket.getParkingSpot()));
+        return;
     }
 }
